@@ -23,6 +23,10 @@ function App() {
         )}
 
       </main>
+
+      <footer>
+        <a href="" id="footer-link">Made by Muelvin Lopez</a>
+      </footer>
     </>
   )
 }

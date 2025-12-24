@@ -1,14 +1,14 @@
 #title-container {
     display: flex;
     justify-content: center;
-    margin-top: 2rem;
+    padding-top: 2rem;
 }
 
 #start-container {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
 }
 
 #start-btn {
@@ -20,4 +20,8 @@
     background-color: rgba(2, 47, 2, 0.493);
     transition: 0.3s;
     color: white;
+}
+
+#footer-link {
+    padding-top: 2rem;
 }
