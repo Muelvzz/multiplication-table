@@ -4,7 +4,7 @@
     padding-top: 2rem;
 }
 
-#start-container {
+#start-container, #timer-container {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -14,6 +14,10 @@
 #start-btn {
     background-color: green;
     font-size: large;
+}
+
+#timer {
+    font-size: clamp(5rem, 6rem, 7rem);
 }
 
 #start-btn:hover {
