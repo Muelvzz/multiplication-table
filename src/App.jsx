@@ -4,7 +4,15 @@ import './App.css'
 function App() {
 
   const [playStatus, setPlayStatus] = useState(false)
+  const [isSolved, setIsSolved] = useState(false)
   const [timer, setTimer] = useState(4)
+
+  const [multiplicand, setMultiplicand] = useState(0)
+  const [multiplier, setMultiplier] = useState(0)
+
+  const randomNumberRange = (min, max) => {
+    return Math.floor(Math.random() * (max - min + 1)) + min
+  }
 
   useEffect(() => {
     if (!playStatus) return
@@ -22,6 +30,11 @@ function App() {
     return () => clearInterval(intervalId)
   }, [playStatus])
 
+  useEffect(() => {
+    setMultiplicand(randomNumberRange(1, 10))
+    setMultiplier(randomNumberRange(1, 10))
+  }, [multiplicand, multiplier])
+
   return (
     <>
       <header>
@@ -36,6 +49,11 @@ function App() {
         { !playStatus ? (
           <div id="start-container">
             <button id="start-btn" onClick={() => setPlayStatus(true)}>Start</button>
+          </div>
+        ) : timer === 0 && playStatus ? (
+          <div id="quiz-container">
+            <h1 id='question'>{ multiplicand } x { multiplier } = ?</h1>
+            <div id="options-container"></div>
           </div>
         ) : (
           <div id="timer-container">
